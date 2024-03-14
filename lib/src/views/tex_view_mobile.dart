@@ -83,7 +83,7 @@ class TeXViewState extends State<TeXView> with AutomaticKeepAliveClientMixin {
     if (_pageLoaded && getRawData(widget) != _lastData) {
       if (widget.loadingWidgetBuilder != null) _height = minHeight;
       _controller
-          .runJavaScriptReturningResult("initView(${getRawData(widget)})");
+          .runJavaScript("initView(${getRawData(widget)})");
       _lastData = getRawData(widget);
     }
   }
